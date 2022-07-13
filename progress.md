@@ -1,5 +1,5 @@
 ## Apna College DSA C++ Course
 
-#### Date:
+#### Date: 13-july-2022
 
-Videos Covered:
+Videos Covered: 21
