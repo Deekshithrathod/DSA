@@ -15,3 +15,7 @@ Videos Covered: 23
 #### Date: 16-july-2022
 
 Videos Covered: 30
+
+#### Date: 17-july-2022
+
+Videos Covered: 40
