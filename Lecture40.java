@@ -11,7 +11,8 @@ public class Lecture40 {
         // System.out.println(s.substring(s.length() + 2));
         System.out.println();
         // System.out.println(removeAllDuplicates(s));
-        System.out.println(moveAllX(s));
+        // System.out.println(moveAllX(s));
+        generateAllSubstringsASCII(s, 0, "");
     }
 
     public static void reverseString(String str) {
@@ -52,5 +53,28 @@ public class Lecture40 {
         char currChar = str.charAt(0);
         String restString = moveAllX(str.substring(1));
         return (currChar == 'x') ? restString + "x" : currChar + restString;
+    }
+
+    public static void generateAllSubstring(String str, int i, String result) {
+        if (str.length() == i) {
+            System.out.println(result);
+            return;
+        }
+
+        char currChar = str.charAt(i);
+        generateAllSubstring(str, i + 1, result);
+        generateAllSubstring(str, i + 1, result + currChar);
+    }
+
+    public static void generateAllSubstringsASCII(String str, int i, String result) {
+        if (str.length() == i) {
+            System.out.println(result);
+            return;
+        }
+
+        char currChar = str.charAt(i);
+        generateAllSubstringsASCII(str, i + 1, result);
+        generateAllSubstringsASCII(str, i + 1, result + currChar);
+        generateAllSubstringsASCII(str, i + 1, result + (int) (currChar));
     }
 }
