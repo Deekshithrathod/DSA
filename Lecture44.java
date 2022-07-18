@@ -29,7 +29,7 @@ public class Lecture44 {
     }
 
     public static boolean isSafe(int r, int c, int arr[][]) {
-        for (int i = 0; i < r; i++) {
+        for (int i = 0; i < c; i++) {
             if (arr[r][i] == 1) {
                 return false;
             }
@@ -42,7 +42,7 @@ public class Lecture44 {
                 return false;
             }
             i--;
-            c--;
+            j--;
         }
         // bottom left
         i = r;
@@ -52,7 +52,7 @@ public class Lecture44 {
                 return false;
             }
             i++;
-            c--;
+            j--;
         }
         return true;
     }
