@@ -5,7 +5,7 @@ public class Lecture42 {
         // 2x10 tiles & 2*1 tiles
         int weights[] = { 10, 20, 30 };
         int prices[] = { 100, 50, 150 };
-        int answer[][] = new int[weights.length][weights.length];
+        // int answer[][] = new int[weights.length][weights.length];
         System.out.println(knapSack(0, weights, prices, 50));
         // System.out.println(countWays(n, m));
     }

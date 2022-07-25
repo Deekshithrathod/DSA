@@ -7,6 +7,7 @@ public class Lecture33 {
         int n = sc.nextInt();
         int pos = sc.nextInt();
         System.out.println(getBit(n, pos));
+        sc.close();
         // getBit(n,pos);
     }
 

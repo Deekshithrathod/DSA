@@ -35,3 +35,11 @@ Videos Covered: 69
 #### Date: 22-july-2022
 
 Videos Covered: 77(Completed the Videos but haven't coded the solutions & tested them with edge cases)
+
+#### Date: 23-july-2022
+
+Videos Covered: 83
+
+#### Date: 24-july-2022
+
+Videos Covered: 90
