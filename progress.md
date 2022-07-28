@@ -40,6 +40,10 @@ Videos Covered: 77(Completed the Videos but haven't coded the solutions & tested
 
 Videos Covered: 83
 
-#### Date: 24-july-2022
+#### Date: 26-july-2022
 
-Videos Covered: 90
+Videos Covered: 87
+
+#### Date: 28-july-2022
+
+Videos Covered: 89 (skipped 88)
