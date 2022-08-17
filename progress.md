@@ -47,3 +47,11 @@ Videos Covered: 87
 #### Date: 28-july-2022
 
 Videos Covered: 89 (skipped 88)
+
+#### Date: 5-August-2022
+
+Videos Covered: 100
+
+#### Date: 17-August-2022
+
+Videos Covered: 110

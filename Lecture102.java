@@ -1,0 +1,1 @@
+// same as 101, but you'll have to print the stuff when i=1 && not at the end
