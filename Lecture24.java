@@ -6,8 +6,7 @@ public class Lecture24 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        // int target = sc.nextInt();
-        int arr[] = new int[n];
+        int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
@@ -20,13 +19,12 @@ public class Lecture24 {
     }
 
     // 1. Find the first repeating element
-    public static void firstRepeatinElement(int arr[], int n) {
+    public static void firstRepeatingElement(int[] arr, int n) {
         HashMap<Integer, Integer> hm = new HashMap<>();
         int firstElIndex = Integer.MAX_VALUE;
         for (int i = 0; i < n; i++) {
             if (hm.containsKey(arr[i])) {
                 int index = hm.get(arr[i]);
-                // if(index < firstElIndex)
                 firstElIndex = Math.min(index, firstElIndex);
             } else {
                 hm.put(arr[i], i);
@@ -35,8 +33,8 @@ public class Lecture24 {
         System.out.println(arr[firstElIndex]);
     }
 
-    // 2. Find if there are two elements in arr, which add upto target
-    public static void twoElementsSumToTarget(int arr[], int n, int target) {
+    // 2. Find if there are two elements in arr, which add unto target
+    public static void twoElementsSumToTarget(int[] arr, int n, int target) {
         // sort the array
         Arrays.sort(arr);
         int l = 0, r = n - 1;

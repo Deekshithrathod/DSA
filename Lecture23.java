@@ -5,7 +5,7 @@ public class Lecture23 {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        int arr[] = new int[n];
+        int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
@@ -19,19 +19,17 @@ public class Lecture23 {
     }
 
     // 1. MaxTill I
-    public static void maxTillI(int arr[], int n) {
+    public static void maxTillI(int[] numbers, int n) {
         int max = Integer.MIN_VALUE;
-        for (int i : arr) {
-            if (i > max) {
-                max = i;
-            }
+        for (int number : numbers) {
+            max = Math.max(max, number);
             System.out.print(max + " ");
 
         }
     }
 
     // 2. Each Sub Array Sum
-    public static void eachSubArraySum(int arr[], int n) {
+    public static void eachSubArraySum(int[] arr, int n) {
         for (int i = 0; i < n; i++) {
             int sum = 0;
             for (int j = i; j < n; j++) {
@@ -44,7 +42,7 @@ public class Lecture23 {
     }
 
     // 3. Longest Arithmetic Subarray
-    public static int longestArithSubArray(int arr[], int n) {
+    public static int longestArithSubArray(int[] arr, int n) {
         if (n <= 2) {
             return n;
         }

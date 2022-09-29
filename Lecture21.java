@@ -19,7 +19,7 @@ public class Lecture21 {
         sc.close();
     }
 
-    public static void bubbleSort(int arr[], int n) {
+    public static void bubbleSort(int[] arr, int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -29,7 +29,7 @@ public class Lecture21 {
         }
     }
 
-    public static void swap(int arr[], int a, int b) {
+    public static void swap(int[] arr, int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;

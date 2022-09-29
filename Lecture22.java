@@ -6,7 +6,7 @@ public class Lecture22 {
 
         int n = sc.nextInt();
         // System.out.println(n);
-        int arr[] = new int[n];
+        int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
@@ -19,7 +19,7 @@ public class Lecture22 {
         sc.close();
     }
 
-    public static void insertionSort(int arr[], int n) {
+    public static void insertionSort(int[] arr, int n) {
         for (int i = 1; i < n; i++) {
             int j = i - 1;
             int key = arr[i];
@@ -32,7 +32,7 @@ public class Lecture22 {
         }
     }
 
-    public static void swap(int arr[], int a, int b) {
+    public static void swap(int[] arr, int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
