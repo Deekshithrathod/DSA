@@ -72,4 +72,30 @@ public class Lecture24 {
             }
         }
     }
+
+    // 4. Find the if there exists a subarray with target sum
+    public static boolean isSubArrayPresent(int[] arr, int target){
+        int left = 0;
+        int right = 0;
+
+        int currSum = 0;
+        while(right<arr.length && currSum < target){
+            currSum += arr[right];
+            right++;
+        }
+
+        while(left < right && right < arr.length){
+            if(currSum>target){
+                currSum -= arr[left];
+                left++;
+            }else if(target == currSum){
+                return true;
+            }
+            else {
+                currSum += arr[right];
+                right++;
+            }
+        }
+        return false;
+    }
 }
