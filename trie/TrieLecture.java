@@ -1,3 +1,4 @@
+
 public class TrieLecture {
   static class Node {
     Node[] children;
@@ -75,13 +76,26 @@ public class TrieLecture {
     // System.out.println(wordBreak(key));
 
     // --------------stats with--------------
-    String words[] = { "apple", "app", "mango", "man", "woman" };
+    // String words[] = { "apple", "app", "mango", "man", "woman" };
+    // buildTrie(words);
+
+    // System.out.println(startsWith("app")); // true
+    // System.out.println(startsWith("moon")); // false
+    // System.out.println(startsWith("wom")); // true
+
+    // String word = "apple";
+    // ArrayList<String> words = new ArrayList<>();
+    // for (int i = 0; i < word.length(); i++) {
+    // words.add(word.substring(i));
+    // }
+    // buildTrie(words.toArray(new String[words.size()]));
+
+    // System.out.println(uniqueSubstring(root));
+    String[] words = { "a", "ap", "app", "bar", "appl", "apply", "apple" };
     buildTrie(words);
 
-    System.out.println(startsWith("app")); // true
-    System.out.println(startsWith("moon")); // false
-    System.out.println(startsWith("wom")); // true
-
+    findLongestWord(root, new StringBuilder());
+    System.out.println(answer);
   }
 
   private static void buildTrie(String words[]) {
@@ -126,5 +140,42 @@ public class TrieLecture {
     }
 
     return false;
+  }
+
+  // count the unique substrings
+  public static int uniqueSubstring(Node root) {
+    if (root == null) {
+      return 0;
+    }
+    int count = 0;
+    for (int i = 0; i < 26; i++) {
+      // if (root.children[i] != null) {
+      count += uniqueSubstring(root.children[i]);
+      // }
+    }
+    return 1 + count;
+  }
+
+  // static StringBuilder str = new StringBuilder();
+  // longest word that has all the substring
+  static String answer = "";
+
+  public static void findLongestWord(Node root, StringBuilder temp) {
+    // if (root == null) {
+    // return "";
+    // }
+    for (int i = 0; i < 26; i++) {
+      if (root.children[i] != null) {
+        temp = temp.append((char) (i + 'a'));
+        if (temp.length() > answer.length()) {
+          answer = temp.toString();
+        }
+        findLongestWord(root.children[i], temp);
+        temp = temp.deleteCharAt(temp.length() - 1);
+      }
+      // temp = temp.re((char)(i+'a'));
+      // count += uniqueSubstring(root.children[i]);
+    }
+    // return "-1";
   }
 }

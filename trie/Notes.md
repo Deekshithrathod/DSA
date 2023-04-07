@@ -15,3 +15,5 @@ worst-case of a trie - search time complexity : O(L)
 
 ![word-break](word-break.png)
 ![starts-with](starts-with.jpeg)
+![longest-word-with-all-prefixes](longest-word.jpeg)
+![all-unique-substrings](all-unique.jpeg)
