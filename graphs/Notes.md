@@ -20,7 +20,7 @@ Instructions
 **Storing a Graph**
 
 - _Adjacency List_: List of lists
-  [Adjacency List](adjacency.png)
+  ![Adjacency List](graph-1.png)
 
 ```java
 // v = 4, e=5; undirected unwighted
