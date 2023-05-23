@@ -7,46 +7,133 @@ Instructions
 
 ---
 
-**Graphs**: Network of Nodes
+Tables of contents
 
-**Basics of Graphs**
-
-- Vertex: ![Vertex](vertex.png)
-- Edge: ![Edge](edge.png)
-- Weights: ![Weights](weights.png)
+- BFS
+- DFS
+- All paths
+- Cycle detection in directed graph
+- Topological Sorting
+- Cycle detection in un-directed graph
+- Shortest path algos
+  - Dijkstra's algorithm
+  - Bellman ford algorithm
+- Minimum Spanning Tree
+  - Prim's Algorithm
+- Strongly Components
+  - Kosaraju's Algorithm
 
 ---
 
-**Storing a Graph**
-
-- _Adjacency List_: List of lists
-  ![Adjacency List](graph-1.png)
+## BFS
 
 ```java
-// v = 4, e=5; undirected unwighted
 
-// vetex-wise
-// 0 - {0,2}
-// 1 - {1,2},{1,3}
-// 2 - {2,0},{2,1},{2,3}
-// 3 - {3,1},{3,2}
+static void bfs(ArrayList<Edge> graph[], int start){
+  Queue<Integer> queue = new LinkedList<>();
+  boolean vis []= new boolean[];
 
-// ArrayList of ArrayList
-// HashMap
-// Array of Arraylist
-// ArrayList<Edge> graph[]
+  queue.add(start);
+  vis[start] = true;
 
-static class Edge{
-  int source;
-  int destination;
+  while(!queue.isEmpty()){
+    int curr = queue.pop();
+    System.out.println(curr);
+
+    for(Edge e : graph[curr]){
+      if(!vis[e.dest]){
+        vis[e.dest] = true;
+        queue.add(e.dest);
+      }
+    }
+  }
 }
 
 ```
 
-- _Adjacency Matrix_:
-  - Space complexity: O(v^2)
-  - neighbour O(v)
-- _Edge List_:
-  - {{0,2},{1,2},{1,3},{2,3}}
-  - used when there's sorting of edges is involved
-- _2-D Matrix_:
+## DFS
+
+### Method-1 (recursion)
+
+```java
+
+static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]){
+  vis[curr] = true;
+  System.out.println(curr);
+
+  for(Edge e : graph[curr]){
+    if(!vis[e.dest]){
+      dfs(e.dest);
+    }
+  }
+}
+
+```
+
+### Method-2 (using stack)
+
+```java
+
+static void dfs(ArrayList<Edge> graph[], int start){
+  Stack<Integer> stack = new Stack<>();
+  boolean vis []= new boolean[];
+
+  stack.add(start);
+  vis[e.dest] = true;
+
+  while(!stack.isEmpty()){
+    int curr = queue.pop();
+    System.out.println(curr);
+
+    for(Edge e : graph[curr]){
+      if(!vis[e.dest]){
+        vis[e.dest] = true;
+        stack.push(e.dest);
+      }
+    }
+  }
+}
+
+```
+
+## All Paths
+
+```java
+
+static void allPath(ArrayList<Edge> graph[], boolean vis[], int curr, String path, int target){
+  vis[curr] = true;
+
+  if(curr == target){
+    System.out.println(path+curr);
+    return;
+  }
+
+  for(Edge e : graph[curr]){
+    if(!vis[e.dest]){
+      allPath(graph, vis, e.dest, path+curr+"-",target);
+    }
+  }
+}
+
+```
+
+## Cycle detection in un-directed Graphs
+
+```java
+
+static boolean hasCycle(ArrayList<Edge> graph[], int curr, boolean vis[], boolean recur[]){
+  vis[curr] = true;
+  recur[curr] = true;
+
+  for(Edge e : graph[curr]){
+    if(recur[e.dest]){
+      return true;
+    }
+    return hasCycle(graph, e.dest, vis, recur);
+  }
+
+  recur[curr] = false;
+  return false;
+}
+
+```
